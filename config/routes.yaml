@@ -1,0 +1,10 @@
+# index:
+#     path: /
+#     controller: App\Controller\LuckyController::index
+#     methods: GET|HEAD
+# blog_list:
+#     path: /blog
+#     controller: App\Controller\LuckyController::blog
+# blog_by_id:
+#     path: /blog/{id}
+#     controller: App\Controller\LuckyController::blog
