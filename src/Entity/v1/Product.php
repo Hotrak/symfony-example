@@ -5,9 +5,11 @@ namespace App\Entity\v1;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
+ * @UniqueEntity(fields="name")
  */
 class Product
 {
@@ -20,12 +22,13 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Uuid
+     * @Assert\NotNull
      */
     private $name;
 
     /**
      * @ORM\Column(type="decimal", precision=10, scale=2)
+     * @Assert\NotNull
      */
     private $price;
 

@@ -40,11 +40,6 @@ class ProductController extends AbstractController
         $errors = $validator->validate($product);
 
         if (count($errors) > 0) {
-            /*
-         * Uses a __toString method on the $errors variable which is a
-         * ConstraintViolationList object. This gives us a nice string
-         * for debugging.
-         */
             $errorsString = $errors;
 
             return $this->json($errorsString, 422);
